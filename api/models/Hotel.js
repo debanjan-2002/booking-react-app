@@ -38,9 +38,12 @@ const HotelSchema = new Schema({
         min: 0,
         max: 5
     },
-    rooms: {
-        type: [String]
-    },
+    rooms: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Room"
+        }
+    ],
     cheapestPrice: {
         type: Number,
         required: true
